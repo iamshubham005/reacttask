@@ -6,7 +6,7 @@ class Data(models.Model):
     sector = models.CharField(max_length=100,blank=True, null=True)
     topic = models.CharField(max_length=100,blank=True, null=True)
     insight = models.TextField(blank=True, null=True)
-    url = models.CharField(blank=True, null=True)
+    url = models.CharField(max_length=500)
     region = models.CharField(max_length=100,blank=True, null=True)
     start_year = models.CharField(max_length=10, blank=True, null=True)
     impact = models.TextField(blank=True, null=True)
