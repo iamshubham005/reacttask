@@ -79,7 +79,7 @@ ROOT_URLCONF = 'visualisation_dashboard.urls'
 
 # CROSS HEADER Connection
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = ("http://localhost:5173", "http://localhost:3001", "http://127.0.0.1:8000", "http://localhost:8001","https://visualisation-dashboard-frontend-xi.vercel.app/") # noqa
+CORS_ALLOWED_ORIGINS = ("http://localhost:5173", "http://localhost:3001", "http://127.0.0.1:8000", "http://localhost:8001","https://visualisation-dashboard-frontend-xi.vercel.app") # noqa
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
 CORS_ALLOW_HEADERS = [
     'accept',
@@ -125,14 +125,11 @@ WSGI_APPLICATION = 'visualisation_dashboard.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'HOST': config('DB_HOST'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'PORT': config('DB_PORT')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
